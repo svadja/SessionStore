@@ -21,7 +21,7 @@
 
 	<form:form method="POST" commandName="customer" action="customer">
 		<form:errors path="*" cssClass="errorblock" element="div" />
-		<form:input path="customer_cid" type="hidden"/>
+		<input name="customer_cid" type="hidden" value="${customer_cid}" />
 		<table>
 			<tr>
 				<td>Customer Name :</td>

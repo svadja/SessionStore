@@ -22,15 +22,12 @@ InitializingBean {
 	protected String getAttributeNameInSession(WebRequest request, String attributeName) {
 		String cid="";
 		if (request.getParameter(attributeName + "_cid") == null){
-			System.err.println("getParrameter == null");
+		
 			cid = ""+request.getAttribute(attributeName + "_cid", WebRequest.SCOPE_REQUEST);
 		}else{
-			System.err.println("getParrameter != null");
 			cid = request.getParameter(attributeName + "_cid");
 		}
-	    System.err.println("CID " + cid);
 	    if (cid != null && !"".equals(cid) && !"null".equals(cid)) {
-	      System.err.println("AttributeNameInSession " + attributeName + "_" + cid);	
 	      return super.getAttributeNameInSession(request, attributeName + "_" + cid);
 	    }
 	    return super.getAttributeNameInSession(request, attributeName);

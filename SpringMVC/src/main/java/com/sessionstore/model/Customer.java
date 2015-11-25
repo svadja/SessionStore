@@ -6,8 +6,6 @@ import org.hibernate.validator.constraints.Range;
 public class Customer {
 
 	int id;
-
-	String customer_cid;
 	
 	String name;
 
@@ -40,26 +38,17 @@ public class Customer {
 		this.id = id;
 	}
 
-	public String getCustomer_cid() {
-		return customer_cid;
-	}
 
-	public void setCustomer_cid(String customer_cid) {
-		this.customer_cid = customer_cid;
-	}
-
-	public Customer(int id, String customer_cid, String name, int age) {
+	public Customer(int id, String name, int age) {
 		super();
 		this.id = id;
-		this.customer_cid = customer_cid;
 		this.name = name;
 		this.age = age;
 	}
 
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", customer_cid=" + customer_cid
-				+ ", name=" + name + ", age=" + age + "]";
+		return "Customer [id=" + id + ", name=" + name + ", age=" + age + "]";
 	}
 	
 
